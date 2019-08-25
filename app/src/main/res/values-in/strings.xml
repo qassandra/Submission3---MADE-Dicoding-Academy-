@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie and Chill</string>
+    <string name="title_home">Halaman Utama</string>
+    <string name="movies">FILM</string>
+    <string name="tv_shows">SERIAL TELEVISI</string>
+
+    <string name="avengers">Avengers</string>
+    <string name="july">July</string>
+    <string name="overview">DESKRIPSI</string>
+    <string name="people"> Orang</string>
+    <string name="many">24</string>
+    <string name="voted">Diulas oleh </string>
+    <string name="average">6.6</string>
+    <string name="votes">Tingkat Ulasan:</string>
+    <string name="ave">Avengers: Infinity War</string>
+    <string name="todo">TODO</string>
+    <string name="brooklyn">Brooklyn Nine-nine</string>
+    <string name="year">2015</string>
+    <string name="settings">Pengaturan Bahasa</string>
+</resources>
