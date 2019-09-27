@@ -10,12 +10,21 @@
     <string name="overview">DESKRIPSI</string>
     <string name="people"> Orang</string>
     <string name="many">24</string>
-    <string name="voted">Diulas oleh </string>
+    <string name="reviewed">Diulas oleh </string>
     <string name="average">6.6</string>
-    <string name="votes">Tingkat Ulasan:</string>
+    <string name="reviewRate">Tingkat Ulasan:</string>
     <string name="ave">Avengers: Infinity War</string>
     <string name="todo">TODO</string>
     <string name="brooklyn">Brooklyn Nine-nine</string>
     <string name="year">2015</string>
     <string name="settings">Pengaturan Bahasa</string>
+    <string name="favorite">Favorit</string>
+    <string name="title_card">Judul</string>
+    <string name="release">Tayang</string>
+    <string name="qassandra_chaidir">Qassandra Chaidir</string>
+    <string name="qassie_chaidir">qassiechaidir@gmail.com</string>
+    <string name="open_drawer">Buka navigation drawer</string>
+    <string name="close_drawer">Tutup navigation drawer</string>
+    <string name="favorite_movies">FAVORIT FILM</string>
+    <string name="favorite_tv_shows">FAVORITE TV</string>
 </resources>

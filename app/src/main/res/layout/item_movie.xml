@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/item_movie"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="16sp">
 
     <ImageView
-        android:id="@+id/image_tv"
+        android:id="@+id/image_movie"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:contentDescription="@string/todo"
@@ -20,27 +20,27 @@
         tools:src="@color/colorPrimary" />
 
     <TextView
-        android:id="@+id/tv_show_title"
+        android:id="@+id/tv_movie_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/image_tv"
+        app:layout_constraintStart_toEndOf="@+id/image_movie"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/avengers" />
 
     <TextView
-        android:id="@+id/tv_show_release"
+        android:id="@+id/tv_movie_release"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/image_tv"
-        app:layout_constraintTop_toBottomOf="@+id/tv_show_title"
+        app:layout_constraintStart_toEndOf="@+id/image_movie"
+        app:layout_constraintTop_toBottomOf="@+id/tv_movie_title"
         tools:text="@string/july" />
 
 </android.support.constraint.ConstraintLayout>

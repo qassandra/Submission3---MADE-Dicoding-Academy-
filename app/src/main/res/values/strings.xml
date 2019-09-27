@@ -9,12 +9,28 @@
     <string name="overview">OVERVIEW</string>
     <string name="people"> People</string>
     <string name="many">24</string>
-    <string name="voted">Reviewed by </string>
+    <string name="reviewed">Reviewed by </string>
     <string name="average">6.6</string>
-    <string name="votes">Review Rate:</string>
+    <string name="reviewRate">Review Rate:</string>
     <string name="ave">Avengers: Infinity War</string>
     <string name="todo">TODO</string>
     <string name="brooklyn">Brooklyn Nine-nine</string>
     <string name="year">2015</string>
     <string name="settings">Change Language Settings</string>
+    <string name="favorite">Favorite</string>
+    <string name="title_card">Title</string>
+    <string name="release">Release</string>
+    <string name="qassandra_chaidir">Qassandra Chaidir</string>
+    <string name="qassie_chaidir">qassiechaidir@gmail.com</string>
+    <string name="open_drawer">Open navigation drawer</string>
+    <string name="close_drawer">Close navigation drawer</string>
+    <string name="favorite_movies">FAVORITE MOVIES</string>
+    <string name="favorite_tv_shows">FAVORITE TV SHOWS</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="movie_banner">MOVIE BANNER</string>
+    <string name="no_data">NO DATA</string>
 </resources>

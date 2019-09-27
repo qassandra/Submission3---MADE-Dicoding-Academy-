@@ -4,12 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="16sp"
     android:id="@+id/item_tv">
 
     <ImageView
-        android:id="@+id/image_tv"
+        android:id="@+id/image_movie"
         android:layout_width="60dp"
         android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,23 +17,23 @@
         tools:srcCompat="@tools:sample/avatars[0]" />
 
     <TextView
-        android:id="@+id/tv_show_title"
+        android:id="@+id/tv_movie_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/image_tv"
+        app:layout_constraintStart_toEndOf="@+id/image_movie"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/brooklyn" />
 
     <TextView
-        android:id="@+id/tv_show_release"
+        android:id="@+id/tv_movie_release"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/year"
-        app:layout_constraintStart_toEndOf="@+id/image_tv"
-        app:layout_constraintTop_toBottomOf="@+id/tv_show_title" />
+        app:layout_constraintStart_toEndOf="@+id/image_movie"
+        app:layout_constraintTop_toBottomOf="@+id/tv_movie_title" />
 </android.support.constraint.ConstraintLayout>
