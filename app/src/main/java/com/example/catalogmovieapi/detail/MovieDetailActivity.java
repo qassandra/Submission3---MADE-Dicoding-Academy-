@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,14 +23,15 @@ import com.example.catalogmovieapi.model.Movies;
 
 import java.util.Objects;
 
-import static com.example.catalogmovieapi.db.MovieDbContract.Columns.AVERAGE;
-import static com.example.catalogmovieapi.db.MovieDbContract.Columns.CONTENT_URI_MOVIE;
-import static com.example.catalogmovieapi.db.MovieDbContract.Columns.COUNT;
-import static com.example.catalogmovieapi.db.MovieDbContract.Columns.MOVIE_ID;
-import static com.example.catalogmovieapi.db.MovieDbContract.Columns.OVERVIEW;
-import static com.example.catalogmovieapi.db.MovieDbContract.Columns.POSTER;
-import static com.example.catalogmovieapi.db.MovieDbContract.Columns.RELEASE_DATE;
-import static com.example.catalogmovieapi.db.MovieDbContract.Columns.TITLE;
+import static com.example.catalogmovieapi.widget.FavoriteWidget.sendRefreshBroadcast;
+import static com.example.catalogmovieapi.contract.MovieDbContract.Columns.AVERAGE;
+import static com.example.catalogmovieapi.contract.MovieDbContract.Columns.CONTENT_URI_MOVIE;
+import static com.example.catalogmovieapi.contract.MovieDbContract.Columns.COUNT;
+import static com.example.catalogmovieapi.contract.MovieDbContract.Columns.MOVIE_ID;
+import static com.example.catalogmovieapi.contract.MovieDbContract.Columns.OVERVIEW;
+import static com.example.catalogmovieapi.contract.MovieDbContract.Columns.POSTER;
+import static com.example.catalogmovieapi.contract.MovieDbContract.Columns.RELEASE_DATE;
+import static com.example.catalogmovieapi.contract.MovieDbContract.Columns.TITLE;
 
 public class MovieDetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
@@ -177,9 +178,12 @@ public class MovieDetailActivity extends AppCompatActivity {
                 getContentResolver().delete(Objects.requireNonNull(getIntent().getData()), null, null);
 
             }
+            sendRefreshBroadcast(getApplicationContext());
+
         } else if (item.getItemId() == R.id.home){
             onBackPressed();
         }
+
         return super.onOptionsItemSelected(item);
     }
 

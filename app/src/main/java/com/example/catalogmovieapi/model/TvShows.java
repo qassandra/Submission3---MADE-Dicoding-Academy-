@@ -4,15 +4,15 @@ import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.example.catalogmovieapi.db.TvDbContract;
+import com.example.catalogmovieapi.contract.TvDbContract;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 
-import static com.example.catalogmovieapi.db.TvDbContract.getColumnInt;
-import static com.example.catalogmovieapi.db.TvDbContract.getColumnString;
+import static com.example.catalogmovieapi.contract.TvDbContract.getColumnInt;
+import static com.example.catalogmovieapi.contract.TvDbContract.getColumnString;
 
 public class TvShows implements Parcelable {
     private int id;

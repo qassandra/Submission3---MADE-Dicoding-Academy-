@@ -7,19 +7,19 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
-import com.example.catalogmovieapi.db.MovieHelper;
-import com.example.catalogmovieapi.db.TvHelper;
+import com.example.catalogmovieapi.helper.MovieHelper;
+import com.example.catalogmovieapi.helper.TvHelper;
 import com.example.catalogmovieapi.fragments.FavoriteMovieFragment;
 
 import java.util.Objects;
 
-import static com.example.catalogmovieapi.db.MovieDbContract.AUTHORITY;
-import static com.example.catalogmovieapi.db.MovieDbContract.Columns.CONTENT_URI_MOVIE;
-import static com.example.catalogmovieapi.db.MovieDbContract.TABLE_MOVIE;
-import static com.example.catalogmovieapi.db.TvDbContract.TABLE_TV;
+import static com.example.catalogmovieapi.contract.MovieDbContract.AUTHORITY;
+import static com.example.catalogmovieapi.contract.MovieDbContract.Columns.CONTENT_URI_MOVIE;
+import static com.example.catalogmovieapi.contract.MovieDbContract.TABLE_MOVIE;
+import static com.example.catalogmovieapi.contract.TvDbContract.TABLE_TV;
 
 @SuppressLint("Registered")
 public class MovieProvider extends ContentProvider {
@@ -53,7 +53,7 @@ public class MovieProvider extends ContentProvider {
 
     @Override
     public Cursor query(@NonNull Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        Log.d(MovieProvider.class.getName(), "query: " + uri.getPath());
+        Log.d(MovieProvider.class.getName(), "query: " + uri.getPath() + " uri nya " + sUriMatcher.match(uri));
 
         Cursor cursor;
         switch (sUriMatcher.match(uri)) {

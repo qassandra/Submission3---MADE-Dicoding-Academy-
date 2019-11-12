@@ -2,8 +2,8 @@ package com.example.catalogmovieapi.adapter;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +16,7 @@ import com.example.catalogmovieapi.model.TvShows;
 import com.example.catalogmovieapi.R;
 
 import java.util.ArrayList;
-import static com.example.catalogmovieapi.db.TvDbContract.Columns.CONTENT_URI_TV;
+import static com.example.catalogmovieapi.contract.TvDbContract.Columns.CONTENT_URI_TV;
 
 public class TvShowsAdapter extends RecyclerView.Adapter<TvShowsAdapter.TvShowsViewHolder> {
     private ArrayList<TvShows> mData = new ArrayList<>();

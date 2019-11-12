@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<SwitchPreference
+    android:defaultValue="false"
+    android:title="Daily Reminder"
+    android:key="@string/key_daily"
+    android:summary="Turn On/Off Reminder"
+    />
+    <SwitchPreference
+        android:defaultValue="false"
+        android:title="Release Reminder"
+        android:key="@string/key_release"
+        android:summary="Turn On/Off Reminder"/>
+</PreferenceScreen>

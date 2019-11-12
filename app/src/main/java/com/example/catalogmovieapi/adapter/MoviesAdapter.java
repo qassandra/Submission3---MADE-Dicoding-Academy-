@@ -2,8 +2,8 @@ package com.example.catalogmovieapi.adapter;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +17,13 @@ import com.example.catalogmovieapi.R;
 
 import java.util.ArrayList;
 
-import static com.example.catalogmovieapi.db.MovieDbContract.Columns.CONTENT_URI_MOVIE;
+import static com.example.catalogmovieapi.contract.MovieDbContract.Columns.CONTENT_URI_MOVIE;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder> {
 
 
     private ArrayList<Movies> mData = new ArrayList<>();
+
 
     private ArrayList<Movies> getData() {
         return mData;
@@ -49,6 +50,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
     public int getItemCount() {
         return mData.size();
     }
+
 
     public class MoviesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView movieTitle, movieRelease;

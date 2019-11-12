@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,14 +23,15 @@ import com.example.catalogmovieapi.model.TvShows;
 
 import java.util.Objects;
 
-import static com.example.catalogmovieapi.db.TvDbContract.Columns.AVERAGE;
-import static com.example.catalogmovieapi.db.TvDbContract.Columns.COUNT;
-import static com.example.catalogmovieapi.db.TvDbContract.Columns.TV_ID;
-import static com.example.catalogmovieapi.db.TvDbContract.Columns.OVERVIEW;
-import static com.example.catalogmovieapi.db.TvDbContract.Columns.POSTER;
-import static com.example.catalogmovieapi.db.TvDbContract.Columns.RELEASE_DATE;
-import static com.example.catalogmovieapi.db.TvDbContract.Columns.TITLE;
-import static com.example.catalogmovieapi.db.TvDbContract.Columns.CONTENT_URI_TV;
+import static com.example.catalogmovieapi.widget.FavoriteWidget.sendRefreshBroadcast;
+import static com.example.catalogmovieapi.contract.TvDbContract.Columns.AVERAGE;
+import static com.example.catalogmovieapi.contract.TvDbContract.Columns.COUNT;
+import static com.example.catalogmovieapi.contract.TvDbContract.Columns.TV_ID;
+import static com.example.catalogmovieapi.contract.TvDbContract.Columns.OVERVIEW;
+import static com.example.catalogmovieapi.contract.TvDbContract.Columns.POSTER;
+import static com.example.catalogmovieapi.contract.TvDbContract.Columns.RELEASE_DATE;
+import static com.example.catalogmovieapi.contract.TvDbContract.Columns.TITLE;
+import static com.example.catalogmovieapi.contract.TvDbContract.Columns.CONTENT_URI_TV;
 
 
 public class TvDetailActivity extends AppCompatActivity {
@@ -176,6 +177,8 @@ public class TvDetailActivity extends AppCompatActivity {
                 getContentResolver().delete(Objects.requireNonNull(getIntent().getData()), null, null);
 
             }
+            sendRefreshBroadcast(getApplicationContext());
+
         }
         return super.onOptionsItemSelected(item);
     }

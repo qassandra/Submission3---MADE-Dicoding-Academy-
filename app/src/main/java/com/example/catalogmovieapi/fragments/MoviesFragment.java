@@ -1,14 +1,15 @@
 package com.example.catalogmovieapi.fragments;
 
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,9 @@ import java.util.ArrayList;
  */
 public class MoviesFragment extends Fragment {
     private MoviesAdapter adapter;
+    private RecyclerView rvMovies;
     public ProgressBar progressBar;
+    ViewModelMovie viewModelMovie;
 
     public MoviesFragment() {
         // Required empty public constructor
@@ -39,13 +42,13 @@ public class MoviesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_movies, container, false);
         adapter = new MoviesAdapter();
-        RecyclerView rvMovies = view.findViewById(R.id.movie_category);
+        rvMovies = view.findViewById(R.id.movie_category);
         rvMovies.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        rvMovies.setAdapter(adapter);
+
         rvMovies.setHasFixedSize(true);
         progressBar = view.findViewById(R.id.progressBar);
 
-        ViewModelMovie viewModelMovie = ViewModelProviders.of(this).get(ViewModelMovie.class);
+        viewModelMovie = new ViewModelProvider(this).get(ViewModelMovie.class);
         viewModelMovie.getMovies().observe(this, getMovie);
         viewModelMovie.setMovies();
         showLoading(true);
@@ -63,10 +66,12 @@ public class MoviesFragment extends Fragment {
     private Observer<ArrayList<Movies>> getMovie = new Observer<ArrayList<Movies>>() {
         @Override
         public void onChanged(@Nullable ArrayList<Movies> movies) {
-            if (movies != null){
+            if (movies.size() > 0){
                 adapter.setData(movies);
+                rvMovies.setAdapter(adapter);
+                showLoading(false);
             }
-            showLoading(false);
+
         }
     };
 
@@ -78,4 +83,8 @@ public class MoviesFragment extends Fragment {
         }
     }
 
+
+    private void loadMovies(){
+
+    }
 }
